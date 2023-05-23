@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Keyword</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section aria-label="navbar">
+    <nav class="navbar-container">
+      <div class="navbar-logo">
+        <img src="KIIT_logo.png" alt="brand-logo" class="brand-logo">
+      </div>
+      <div class="grow-list">
+        <ul class="list">
+          <li class="list-item"><a href="main.html">Prantik</a></li>
+              <li class="list-item"><a href="overloading_debapriya.html">Debapriya</a></li>
+              <li class="list-item"><a href="class_aniket.html">Aniket</a></li>
+              <li class="list-item"><a href="class_anirban.html">Anirban</a></li>
+              <li class="list-item"><a href="object_swapnil.html">Swapnil</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  
+  <div class="content-container">
+    <div class="topic-links">
+      <ul class="list">
+        <li class="list-item"><a href="class_aniket.html">Introduction to Class</a></li>
+        <li class="list-item"><a href="class_anirban.html">Class Members</a></li>
+        <li class="list-item"><a href="object_swapnil.html">Objects</a></li>
+        <li class="list-item"><a href="overloading_debapriya.html">Method and Constructor Overloading</a></li>
+        <li class="list-item"><a href="staticKeyword.html">Static Keyword</a></li>
+        <li class="list-item"><a href="index.html">Final Keyword</a></li>
+        
+      </ul>
+    </div>
+
+
+
+    <section class="static-content">
+        <section>
+          <div class="heading-div">
+            <h1 class="main-heading">Java Static keyword</h1>
+          </div>
+          <div class="hero-section">
+              <p class="desc">
+                  In Java, the static keyword is used for memory management mainly. We can apply static keyword with variables, methods, blocks and nested classes. The static keyword belongs to the class than an instance of the class.
+              </p>
+              <p>
+                  In Java, the <b>static</b> keyword can be used as:
+                  <ul class="list">
+                      <li>Staic Variable</li>
+                      <li>Static Method</li>
+                      <li>Static Block</li>
+                  </ul>
+              <p>
+              </p>
+                Now lets discuss each of these points in detail.
+              </p>
+          </div>
+        </section>
+      <hr style="margin-top: 20px;">
+      <!-- Topic Section-1 -->
+      <section class="topic-section">
+        <div class="topic-heading">
+          <h2>1. Java Static Variable</h2>
+        </div>
+        <div class="topic-description">
+          In Java, when we create objects of a class, then every object will have its own copy of all the variables of the class. For example,
+        </div>
+        <div class="code-editor">
+          <div class="example-code">
+            <pre>
+              class Test 
+              {
+                // regular variable
+               int age;
+              }
+            
+              class Main 
+              {
+                // create instances of Test
+                Test test1 = new Test();
+                Test test2 = new Test();
+              }            
+            </pre>
+          </div>
+        </div>
+        <p>
+          Here, both the objects <b>test1</b> and <b>test2</b> will have separate copies of the variable age. And, they are different from each other.
+        </p>
+        <p>
+          However, if we declare a variable static, all objects of the class share the same static variable. It is because like static methods, static variables are also associated with the class. And, we don't need to create objects of the class to access the static variables. For example,
+        </p>
+        <div class="code-editor">
+          <div class="example-code">
+            <pre>
+              class Test 
+              {
+                // static variable
+                static int age;
+              }
+              class Main 
+              {
+                // access the static variable
+                Test.age = 20;
+              }           
+            </pre>
+          </div>
+        </div>
+        <p>
+          Here, we can see that we are <b>accessing the static variable from the other class using the class name.</b>
+        </p>
+      </section>
+      <hr>
+      <!-- Topic Section-2 -->
+      <section class="topic-section">
+        <div class="topic-heading">
+          <h2>2. Java Static Methods</h2>
+        </div>
+        <div class="topic-description">
+          <p>
+            If you apply static keyword with any method, it is known as static method.  
+            <ul class="list">
+                <li>A static method belongs to the class rather than the object of a class.</li>
+                <li>A static method can be invoked without the need for creating an instance of a class.</li>
+                <li>A static method can access static data member and can change the value of it. For Example,</li>
+            </ul>
+          </p>
+        </div>
+        <div class="code-editor">
+          <div class="example-code">
+            <pre>
+              //Java Program to demonstrate the use of a static method.  
+              class Student
+              {  
+                int rollno;  
+                String name;  
+                static String college = "ITS";  
+                
+                static void change()
+                {  
+                  college = "BBDIT";  
+                }  
+                 
+                Student(int r, String n)
+                {  
+                  rollno = r;  
+                  name = n;  
+                }  
+                 
+                void display()
+                {
+                  System.out.println(rollno+" "+name+" "+college);
+                }  
+              }  
+              
+              public class TestStaticMethod
+              {  
+                public static void main(String args[])
+                {  
+                  Student.change();   //calling change method  
+
+                  Student s1 = new Student(111,"Karan");  
+                  Student s2 = new Student(222,"Aryan");  
+                  Student s3 = new Student(333,"Sonoo");  
+                   
+                  s1.display();  
+                  s2.display();  
+                  s3.display();  
+                }  
+              }  
+            </pre>
+          </div>
+        </div>
+        <div class="code-editor" style="color:#F92672">
+          <pre>
+            Output:111 Karan BBDIT
+                   222 Aryan BBDIT
+                   333 Sonoo BBDIT
+          </pre>
+        </div>
+        <div class="topic-description">
+          In the above example, we have created a static method named <b>change()</b> inside the Student class. Here, the <b>TestStaticMethod </b>class test the functionality of static method.</p> 
+        </div>
+        <div class="topic-description">
+          <p><b>Restrictions for the static method?</b></p>
+          <p>There are two main restrictions for the static method. They are:
+            <ul class="list">
+              <li>The static method can not use non static data member or call non-static method directly.</li>
+              <li>this and super cannot be used in static context.</li>
+            </ul>
+          </p> 
+        </div>
+        <div class="code-editor">
+          <div class="example-code">
+            <pre>
+              class A
+              {  
+                int a=40;//non static  
+                  
+                public static void main(String args[])
+                {  
+                  System.out.println(a);  
+                }  
+              }  
+            </pre>
+          </div>
+        </div>
+        <div class="topic-description">
+          <p>When we run the program, we will get a <b>compilation error</b> with the following message.</p>
+        </div>
+        <div class="code-editor" style="color:#F92672">
+          <pre>
+            Output:Compile Time Error
+          </pre>
+        </div>
+      </section>
+      
+      <hr>
+      <!-- Topic Section-3 -->
+      <section class="topic-section">
+        <div class="topic-heading">
+          <h2>3. Java Static Block</h2>
+        </div>
+        <div class="topic-description">
+          In Java, static blocks are used to initialize the static variables. For example,
+        </div>
+        <div class="code-editor">
+          <div class="example-code">
+            <pre>
+              class Test 
+              {
+                // static variable
+                static int age;
+            
+                // static block
+                static 
+                {
+                    age = 23;
+                }
+              }
+            </pre>
+          </div>
+        </div>
+          <div class="topic-description">
+            <p>Here we can see that we have used a static block with the syntax:
+              <pre>
+              static {
+                  // variable initialization
+              }
+            </pre></p>
+            <p>
+              The static block is executed only once when the class is loaded in memory. The class is loaded if either the object of the class is requested in code or the static members are requested in code.
+            </p>
+            <p>
+              A class can have multiple static blocks and each static block is executed in the same sequence in which they have been written in a program.</p>
+          </div>
+          <div class="code-editor">
+            <div class="example-code">
+              <pre>
+                //use of static block in Java
+                class Main {
+
+                  // static variables
+                  static int a = 23;
+                  static int b;
+                  static int max;
+               
+                  // static blocks
+                  static {
+                      System.out.println("First Static block.");
+                      b = a * 4;
+                  }
+                  static {
+                      System.out.println("Second Static block.");
+                      max = 30;
+                  }
+               
+                  // static method
+                  static void display() {
+               
+                      System.out.println("a = " + a);
+                      System.out.println("b = " + b);
+                      System.out.println("max = " + max);
+                  }
+               
+                  public static void main(String args[]) {
+                      // calling the static method
+                      display();
+                  }
+               }
+              </pre>
+            </div>
+          </div>
+          <div class="code-editor" style="color:#F92672">
+            <pre>
+              Output:
+              First Static block.
+              Second Static block.
+              a = 23
+              b = 92
+              max = 30
+            </pre>
+          </div>
+          <div class="topic-description">
+            <p>In the above program. as soon as the Main class is loaded</p>
+              <ul class="list">
+                <li>The value of a is set to 23.</li>
+                <li>The first static block is executed. Hence, the string First Static block is printed and the value of b is set to a * 4.</li>
+                <li>The second static block is executed. Hence, the string Second Static block is printed and the value of max is set to 30.</li>
+                <li>And finally, the print statements inside the method display() are executed.</li>
+              </ul>
+            </p> 
+          </div>
+      </section>
+      <!-- Button Section -->
+    </div>
+    <div class="btn-div">
+      <a href="staticKeyword.html" class="btn">Previous: Java Final Keyword</a>
+    </div>
+    <!-- Footer Section -->
+    </section>
+    <div class="footer">
+      Developed by Prantik Barik
+    </div>
+</body>
+</html>

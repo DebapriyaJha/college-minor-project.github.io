@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+main {
+    margin: 20px;
+}
+
+section {
+    margin: 40px 0;
+}
+
+h2 {
+    font-size: 34px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color:#044762;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.5;
+    margin: 10px 0;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bolder;
+    color: #005553;
+}
+
+pre {
+    background-color: #57C5B6;
+    box-shadow: 0px 0px 10px rgba(3, 3, 3, 0.806);
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.know-more-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #069d89;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.know-more-btn:hover {
+    background-color: #555;
+}
+
+.code{
+    width: 40vw;
+    padding: 2rem 1rem;
+    margin: 1rem auto;
+    font-size: 18px;
+    font-family:cursive;
+}
+
+li{
+    font-size: 34px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-bottom: 10px;
+    text-align: center;
+    color:#044762;
+}
+
+
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #056b0a;
+    color: white;
+}
+.grow-list ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item{
+    list-style: none;
+    padding-right: 2.5rem;
+
+}
+.grow-list .list li a{
+    text-decoration: none;
+    color: white;
+    font-size:large;
+}
+
+.grow-list .list li a:hover{
+    color: #F92672;
+    cursor: pointer;
+    transition: color ease-in 0.2s;
+}
+
+.navbar-logo img{
+    height: 3rem;
+    margin-left: 2rem;
+}

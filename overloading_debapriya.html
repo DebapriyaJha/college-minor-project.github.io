@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Method and Constructor Overloading in Java</title>
+	<link rel="stylesheet" href="style_debapriya.css">
+</head>
+<body>
+	<header>
+			  <nav class="navbar-container">
+				<div class="navbar-logo">
+				  <img src="KIIT_logo.png" alt="brand-logo" class="brand-logo">
+				</div>
+				<div class="grow-list">
+				  <ul class="list">
+					<li class="list-item"><a href="main.html">Prantik</a></li>
+					<li class="list-item"><a href="overloading_debapriya.html">Debapriya</a></li>
+					<li class="list-item"><a href="class_aniket.html">Aniket</a></li>
+					<li class="list-item"><a href="class_anirban.html">Anirban</a></li>
+					<li class="list-item"><a href="object_swapnil.html">Swapnil</a></li>
+				  </ul>
+				</div>
+			  </nav>
+			</section>
+		</div>
+	</header>
+	<main>
+		<section>
+			<h2>1. Method Overloading</h2>
+			<p>Method overloading is a feature in Java that allows you to define multiple methods with the same name but different parameters.</p>
+			<p>Here's an example:</p>
+			<pre class="code">
+public class Calculator {
+  public int add(int a, int b) {
+    return a + b;
+  }
+  
+  public int add(int a, int b, int c) {
+    return a + b + c;
+  }
+}
+</pre>
+		<p>In this example, we have defined two methods with the same name "add", but one takes two parameters and the other takes three parameters. When we call the "add" method, Java automatically selects the appropriate method based on the number and types of parameters passed to it.</p>
+		</section>
+		<section>
+			<h2>2. Constructor Overloading</h2>
+			<p>Constructor overloading is similar to method overloading, but it involves defining multiple constructors with different parameters in a class.</p>
+			<p>Here's an example:</p>
+			<pre class="code">
+public class Person {
+  private String name;
+  private int age;
+  
+  public Person() {
+    this.name = "Unknown";
+    this.age = 0;
+  }
+  
+  public Person(String name) {
+    this.name = name;
+    this.age = 0;
+  }
+  
+  public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+			</pre>
+			<p>In this example, we have defined three constructors for the "Person" class. The first constructor sets the name to "Unknown" and the age to 0. The second constructor takes a name parameter and sets the age to 0. The third constructor takes both name and age parameters.</p>
+			<p>When we create an object of the "Person" class, we can choose which constructor to use based on the parameters we want to pass.</p>
+		</section>
+		</ol>
+		</table>
+			<a href="r_debapriya.html" class="know-more-btn">Know About Difference Between Method Overloading & Constructor Overloading</a>
+	</main>
+</body>
+</html>

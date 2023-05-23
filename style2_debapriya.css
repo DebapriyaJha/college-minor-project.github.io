@@ -1,0 +1,90 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+h1 {
+    margin: 20px 0;
+    text-align: center;
+}
+p {
+    margin: 0 0 20px;
+    text-align: justify;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px;
+}
+.card {
+    background-color: #57C5B6;
+    box-shadow: 0px 0px 10px rgba(3, 3, 3, 0.806);
+    margin: 20px 0;
+    padding: 20px;
+    width: 30%;
+}
+.card h2 {
+    margin: 0 0 10px;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#044762;
+}
+.card p {
+    margin: 0 0 10px;
+    text-align: justify;
+    font-size: 16px;
+    font-family:cursive;
+}
+.card ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: justify;
+}
+.card ul li {
+    margin-bottom: 5px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 16px;
+    font-family:cursive;
+}
+.card ul li:before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.backto-homepage-btn {
+    display:inline-block;
+    margin-left: 36%;
+    margin-bottom: 20px;
+    background-color: #069d89;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.backto-homepage-btn:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 1px;
+    text-align: center;
+    padding-top: 1rem;
+}

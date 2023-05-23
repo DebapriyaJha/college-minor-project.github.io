@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <title>Home_Group 04</title>
+  </head>
+  <body>
+    <div class="container">
+      <section aria-label="navbar">
+        <nav class="navbar-container">
+          <div class="navbar-logo">
+            <img src="KIIT_logo.png" alt="brand-logo" class="brand-logo">
+          </div>
+          <div class="grow-list">
+            <ul class="list">
+              <li class="list-item"><a href="main.html">Prantik</a></li>
+              <li class="list-item"><a href="overloading_debapriya.html">Debapriya</a></li>
+              <li class="list-item"><a href="class_aniket.html">Aniket</a></li>
+              <li class="list-item"><a href="class_anirban.html">Anirban</a></li>
+              <li class="list-item"><a href="object_swapnil.html">Swapnil</a></li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+      
+      <div class="content-container">
+        <div class="topic-links">
+          <ul class="list">
+            <li class="list-item"><a href="class_aniket.html">Introduction to Class</a></li>
+            <li class="list-item"><a href="class_anirban.html">Class Members</a></li>
+            <li class="list-item"><a href="object_swapnil.html">Objects</a></li>
+            <li class="list-item"><a href="overloading_debapriya.html">Method and Constructor Overloading</a></li>
+            <li class="list-item"><a href="staticKeyword.html">Static Keyword</a></li>
+            <li class="list-item"><a href="main.html">Final Keyword</a></li>
+           
+          </ul>
+        </div>
+        <!-- Intro Section -->
+        <section class="main-content">
+          <section>
+            <div class="heading-div">
+              <h1 class="main-heading">Java Final keyword</h1>
+            </div>
+            <div class="hero-section">
+                <p class="desc">
+                    In Java, the <b>final</b> keyword is used for many different purposes. It can be used with variables, methods, and classes.
+                </p>
+                <p>
+                    In Java, the final keyword is mainly three purposes. They are:
+                    <ul class="list">
+                        <li>Once any variable is declared final, it can be intialized only once.</li>
+                        <li>Once any method is declared final, it cannot be overriden.</li>
+                        <li>Once any class is declared final, it cannot be extended further.</li>
+                    </ul>
+                <p>
+                </p>
+                  Now lets discuss each of these points in detail.
+                </p>
+            </div>
+          </section>
+        <hr style="margin-top: 20px;">
+        <!-- Topic Section-1 -->
+        <section class="topic-section">
+          <div class="topic-heading">
+            <h2>1. Java Final Variable</h2>
+          </div>
+          <div class="topic-description">
+            Final keyword is used to create the equivalance of a named constant. In Java, we cannot change the value of a final variable.
+          </div>
+          <div class="code-editor">
+            <div class="example-code">
+              <pre>
+                class Demo1 
+                {
+                  public static void main(String[] args) 
+                  {
+                    // create a final variable
+                    final int TEMP = 10;
+                
+                    // try to change the final variable
+                    TEMP = 20;
+                    System.out.println("Age: " + AGE);
+                  }
+                }              
+              </pre>
+            </div>
+          </div>
+            <div class="topic-description">
+                In the above program, we have created a final variable named <b>TEMP</b>. And we have tried to change the value of the final variable.<br>
+                When we run the program, we will get a <b>compilation error</b> with the following message.
+            </div>
+            <div class="code-editor" style="color:#F92672">
+              <pre>
+                cannot assign a value to final variable TEMP
+                TEMP = 20;
+                ^
+              </pre>
+            </div>
+        </section>
+        <hr>
+        <!-- Topic Section-2 -->
+        <section class="topic-section">
+          <div class="topic-heading">
+            <h2>2. Java Final Methods</h2>
+          </div>
+          <div class="topic-description">
+            In Java, the final method cannot be overridden by the child class. For example,
+          </div>
+          <div class="code-editor">
+            <div class="example-code">
+              <pre>
+                class FinalDemo 
+                {
+                  // create a final method
+                  public final void display() 
+                  {
+                    System.out.println("This is a final method.");
+                  }
+                }
+              
+                class Main extends FinalDemo 
+                {
+                  // try to override final method
+                  public final void display() 
+                  {
+                  System.out.println("The final method is overridden.");
+                  }
+              
+                  public static void main(String[] args) 
+                  {
+                    Main obj = new Main();
+                    obj.display();
+                  }
+                }
+              </pre>
+            </div>
+          </div>
+            <div class="topic-description">
+              <p>In the above example, we have created a final method named <b>display()</b> inside the FinalDemo class. Here, the <b>Main </b>class inherits the FinalDemo class.</p>
+              <p>We have tried to override the final method in the Main class. When we run the program, we will get a <b>compilation error</b> with the following message.</p>
+            </div>
+            <div class="code-editor" style="color:#F92672">
+              <pre>
+                display() in Main cannot override display() in FinalDemo
+                public final void display() {
+                                  ^
+                overridden method is final
+              </pre>
+            </div>
+        </section>
+        <hr>
+        <!-- Topic Section-3 -->
+        <section class="topic-section">
+          <div class="topic-heading">
+            <h2>3. Java Final Class</h2>
+          </div>
+          <div class="topic-description">
+            In Java, the final class cannot be inherited by another class. It is used to stop inheritance. For example,
+          </div>
+          <div class="code-editor">
+            <div class="example-code">
+              <pre>
+                // create a final class
+                final class FinalClass 
+                {
+                  public void display() 
+                  {
+                    System.out.println("This is a final method.");
+                  }
+                }
+  
+                // try to extend the final class
+                class Demo3 extends FinalClass 
+                {
+                  public  void display() 
+                  {
+                    System.out.println("The final method is overridden.");
+                  }
+                
+                  public static void main(String[] args) 
+                  {
+                    Main obj = new Main();
+                    obj.display();
+                  }
+                }
+                
+              </pre>
+            </div>
+          </div>
+            <div class="topic-description">
+              <p>In the above example, we have created a final class named <b>FinalClass</b>. Here, we have tried to inherit the final class by the <b>Demo3</b> class.</p>
+              <p>When we run the program, we will get a <b>compilation error</b> with the following message.</p>
+            </div>
+            <div class="code-editor" style="color:#F92672">
+              <pre>
+                cannot inherit from final FinalClass
+                class Demo3 extends FinalClass {
+                                    ^
+              </pre>
+            </div>
+        </section>
+      </section>
+      </div>
+      <!-- Button Section -->
+      <div class="btn-div">
+        <a href="staticKeyword.html" class="btn">Next: Java Static Keyword</a>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+      Developed by Prantik Barik
+    </div>
+  </body>
+</html>
